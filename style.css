@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #071326;  /* azul mais escuro e profundo */
+  background-color: #071326;  
   font-family: 'Inter', sans-serif;
   color: #eef2ff;
   line-height: 1.5;
@@ -165,7 +165,7 @@ section {
   font-weight: 400;
 }
 
-/* IESB card com logo */
+
 .iesb-card {
   background: #0b192c;
   border-radius: 1.8rem;
@@ -235,7 +235,7 @@ section {
   border-color: #5a8bb9;
 }
 
-/* disciplinas */
+
 .subjects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -287,7 +287,7 @@ section {
   padding-left: 1rem;
 }
 
-/* experiências */
+
 .experience-grid {
   display: flex;
   flex-direction: column;
@@ -341,7 +341,7 @@ section {
   line-height: 1.5;
 }
 
-/* certificados */
+
 .certificates-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -427,7 +427,7 @@ section {
   text-decoration: underline;
 }
 
-/* rodapé (branco) */
+
 footer {
   margin-top: 3rem;
   background: #ffffff;

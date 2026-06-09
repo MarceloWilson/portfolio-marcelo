@@ -1,5 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Efeito de Navbar mudando de cor ao scrollar
+  // --- 1. LÓGICA DO TEMA CLARO/ESCURO ---
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = themeToggleBtn.querySelector('i');
+
+  // Verifica se o usuário já havia escolhido o tema claro anteriormente
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if (savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.add('fa-moon');
+  }
+
+  // Evento de clique para alternar os temas
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    if (currentTheme === 'light') {
+      // Muda para Escuro (Dark)
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('portfolio-theme', 'dark');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    } else {
+      // Muda para Claro (Light)
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('portfolio-theme', 'light');
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
+    }
+  });
+
+
+  // --- 2. EFEITO DE NAVBAR AO ROLAR A PÁGINA ---
   const navbar = document.getElementById("navbar");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
@@ -9,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 2. Animação de Scroll (Fade Up Progressivo)
+  // --- 3. ANIMAÇÃO DE SCROLL (FADE UP) ---
   const fadeElements = document.querySelectorAll('.fade-up');
   const observerOptions = {
     threshold: 0.15,
@@ -27,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fadeElements.forEach(el => observer.observe(el));
 
-  // 3. Efeito de Máquina de Escrever (Typing Effect)
+  // --- 4. EFEITO MÁQUINA DE ESCREVER ---
   const typingText = document.getElementById("typing-text");
   const words = [
     "Desenvolvedor Full Stack",
@@ -67,6 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, typeSpeed);
   }
   
-  // Iniciar o efeito de digitação após 1 segundo
+  // Iniciar o efeito após 1 segundo
   setTimeout(type, 1000);
 });

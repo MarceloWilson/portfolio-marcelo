@@ -62,10 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 4. EFEITO MÁQUINA DE ESCREVER ---
   const typingText = document.getElementById("typing-text");
   const words = [
-    "Desenvolvedor Full Stack",
-    "Entusiasta em DevOps",
+    "Desenvolvedor",
+    "Focado em Dados",
     "Analista de Sistemas",
-    "Especialista em Docker"
   ];
   
   let wordIndex = 0;
